@@ -1,5 +1,9 @@
 package com.wellsfargo.training.cfms.repository;
 
-public class UserCardRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.wellsfargo.training.cfms.model.UserCard;
+
+public interface UserCardRepository extends JpaRepository<UserCard, Long> {
 
 }
