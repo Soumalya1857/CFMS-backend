@@ -16,6 +16,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class ApplicationSecurityConfig   {
 	 @Bean
 	    public WebSecurityCustomizer webSecurityCustomizer() {
-	        return (web) -> web.ignoring().antMatchers("/samp", "/register","/findUsers");
+	        return (web) -> web.ignoring().antMatchers("/register","/findUsers","/findUser/*");
 	    }
 	}

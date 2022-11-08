@@ -22,19 +22,10 @@ public class RegisterController {
 		userService.registerUser(user);
 	}
 	
-	@GetMapping("/samp")
-	public String uploadDetails() {
-		return "hello";
-	}
-	
 	@GetMapping("/findUsers")
 	public List<User> getAllUser() {
 		return userService.getAllUser();
 	}
 	
-	@GetMapping("/findUser/{mail}")
-public Optional<User> loginUser(@PathVariable("mail") String email) {
-		
-		return userService.loginUser(email);
-	}
+	
 }
