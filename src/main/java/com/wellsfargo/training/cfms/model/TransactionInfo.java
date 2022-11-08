@@ -31,7 +31,7 @@ public class TransactionInfo {
 	@Column(name="transaction_id")
 	private Long transactionId;
 	
-	@Column(name = "user_id")
+	@Column(name = "amount_paid")
 	private Long amountPaid; // foreign to user
 	
 	@Column(name = "product_id")
