@@ -1,25 +1,6 @@
 # CFMS-backend
 springboot backend for CFMS project
 
-{
-    "user_id":"1se3",
-    "first_name":"Ganesh",
-    "last_name":"patnala",
-    "phone_number":"9542868633",
-    "email":"ganesh@gmail.com",
-    "user_name":"syam",
-    "password":"ganesh",
-    "address":"kakinada",
-    "card_type":"gold",
-    "bank":"SBI",
-    "account_number":"643024589",
-    "ifsc_code":"SBIN200145",
-    "user_type":"na",
-    "is_activated":true,
-    "registration_date":"10-02-2022"
-}
-
-
 SchemaUsers: 
 
 * First name
