@@ -28,6 +28,4 @@ public class RegisterController {
 	public List<User> getAllUser() {
 		return userService.getAllUser();
 	}
-	
-	
 }
