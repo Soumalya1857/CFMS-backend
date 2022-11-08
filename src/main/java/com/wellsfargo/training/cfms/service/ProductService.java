@@ -18,8 +18,13 @@ public class ProductService implements IProductServiceImpl {
 	@Autowired
 	private ProductRepository productRepository;
 	
+	public Product postProduct(Product product) {
+		return productRepository.save(product);
+	}
+	
 	public Optional<Product> getProduct (Long productId) {
-		return productRepository.findById(productId);
+		System.out.print(productId);
+		return productRepository.findByProductId(productId);
 	}
 	
 	public List<Product> getAllProduct(){

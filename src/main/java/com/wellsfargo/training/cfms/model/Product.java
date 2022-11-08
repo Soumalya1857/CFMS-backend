@@ -28,6 +28,9 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name="product_id")
+	private Long productId;
+	
 	@Column(name = "price")
 	private Long price;
 	
@@ -36,5 +39,14 @@ public class Product {
 	
 	@Column(name = "product_name")
 	private String productName;
+	
+	@Column(name = "product_img")
+	private String[] productImage;
+	
+	@Column(name = "cost")
+	private Long cost;
+	
+	@Column(name = "emi_starting")
+	private Long emiStarting;
 	
 }

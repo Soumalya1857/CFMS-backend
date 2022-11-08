@@ -1,5 +1,6 @@
 package com.wellsfargo.training.cfms.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -30,14 +31,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "user_id")
-	private Long userId; // foreign to user
 	
 	@Column(name = "first_name")
 	private String firstName; // foreign to Card
 	
 	@Column(name = "last_name")
 	private String lastName;
+	
+	@Column(name="dob")
+	private Date dob;
 	
 	@Column(name = "phone_number")
 	private String phoneNumber;
@@ -61,19 +63,12 @@ public class User {
 	private String bank;
 	
 	@Column(name = "account_number")
-	private String accountNumber;
+	private Long accountNumber;
 	
 	@Column(name = "ifsc_code")
 	private String ifscCode;
 	
-	@Column(name = "user_type")
-	private String userType;
-	
-	
-	@Column(name = "is_activated")
-	private boolean isActivated;
-	
 	@Column(name = "registration_date")
-	private Date registrationDate;
+	private Date registrationDate=new Date(); // foreign to user
 	
 }

@@ -18,8 +18,9 @@ public class RegisterController {
 	@Autowired
 	UserService userService;
 	@PostMapping("/register")
-	public void uploadDetails(@RequestBody User user) {
+	public String uploadDetails(@RequestBody User user) {
 		userService.registerUser(user);
+		return "Success";
 	}
 	
 	@GetMapping("/findUsers")

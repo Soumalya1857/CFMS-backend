@@ -17,6 +17,7 @@ public class ApplicationSecurityConfig   {
 	 @Bean
 	    public WebSecurityCustomizer webSecurityCustomizer() {
 	        return (web) -> web.ignoring().antMatchers("/register","/findUsers","/loginUser",
-	        					"/postTransactions","/getTransactions","/getTransactionById");
+	        					"/postTransactions","/getTransactions","/getTransactionById",
+	        					"/postProduct","/productById","/allProducts");
 	    }
 	}
