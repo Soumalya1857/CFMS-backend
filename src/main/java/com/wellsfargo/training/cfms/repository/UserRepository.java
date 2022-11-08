@@ -8,5 +8,7 @@ import com.wellsfargo.training.cfms.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	
+	
+	
 	public Optional<User> findByEmail(String email);
 }
