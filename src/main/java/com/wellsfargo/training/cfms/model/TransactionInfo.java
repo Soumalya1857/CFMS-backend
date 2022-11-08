@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +20,6 @@ import lombok.ToString;
 
 @Entity
 @Table(name="transaction_info", uniqueConstraints = @UniqueConstraint(columnNames = "transaction_id"))
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -41,15 +41,80 @@ public class TransactionInfo {
 	private Long userCardId;
 	
 	@Column(name = "is_outstanding")
-	private boolean isOutstanding;
+	private boolean outstanding;
 	
 	@Column(name = "is_completed")
-	private boolean isCompleted;
+	private boolean completed;
 	
 	@Column(name = "user_id")
 	private Long userId ;
 	
 	@Column(name = "date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date date;
+
+	public Long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(Long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Long getAmountPaid() {
+		return amountPaid;
+	}
+
+	public void setAmountPaid(Long amountPaid) {
+		this.amountPaid = amountPaid;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	public Long getUserCardId() {
+		return userCardId;
+	}
+
+	public void setUserCardId(Long userCardId) {
+		this.userCardId = userCardId;
+	}
+
+	public boolean isOutstanding() {
+		return outstanding;
+	}
+
+	public void setOutstanding(boolean outstanding) {
+		this.outstanding = outstanding;
+	}
+
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	
 }

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,12 +42,14 @@ public class UserCard {
 	private Long useableCreditLimit;
 	
 	@Column(name = "is_activated")
-	private boolean isActivated;
+	private boolean activated;
 	
 	@Column(name = "issue_date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date issueDate;
 	
 	@Column(name = "expiry_date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date expiryDate;
 	
 }

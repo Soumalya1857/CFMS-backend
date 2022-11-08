@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wellsfargo.training.cfms.model.User;
 import com.wellsfargo.training.cfms.service.UserService;
 
 @RestController
+@RequestMapping(value="/api")
 public class RegisterController {
 	@Autowired
 	UserService userService;

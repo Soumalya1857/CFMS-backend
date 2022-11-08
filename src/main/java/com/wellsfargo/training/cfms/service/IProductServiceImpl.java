@@ -8,5 +8,6 @@ import com.wellsfargo.training.cfms.model.Product;
 public interface IProductServiceImpl {
 	
 	public Optional<Product> getProduct (Long productId);
+	public List<Product> getAllProduct();
 	
 }

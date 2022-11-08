@@ -17,8 +17,6 @@ import lombok.ToString;
 
 @Entity
 @Table(name="card", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -36,5 +34,37 @@ public class Card {
 	
 	@Column(name = "product_name")
 	private String productName;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	
 }
