@@ -15,7 +15,7 @@ import com.wellsfargo.training.cfms.repository.UserRepository;
 
 @Transactional
 @Service
-public class UserService {
+public class UserService implements IUserServiceImpl {
 	
 	@Autowired
 	private UserRepository userRepository;
