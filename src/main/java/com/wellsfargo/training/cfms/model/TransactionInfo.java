@@ -52,4 +52,70 @@ public class TransactionInfo {
 	@Column(name = "date")
 	private Date date;
 	
+	public Long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(Long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Long getAmountPaid() {
+		return amountPaid;
+	}
+
+	public void setAmountPaid(Long amountPaid) {
+		this.amountPaid = amountPaid;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	public Long getUserCardId() {
+		return userCardId;
+	}
+
+	public void setUserCardId(Long userCardId) {
+		this.userCardId = userCardId;
+	}
+
+	public boolean isOutstanding() {
+		return isOutstanding;
+	}
+
+	public void setOutstanding(boolean isOutstanding) {
+		this.isOutstanding = isOutstanding;
+	}
+
+	public boolean isCompleted() {
+		return isCompleted;
+	}
+
+	public void setCompleted(boolean isCompleted) {
+		this.isCompleted = isCompleted;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	
+	
 }

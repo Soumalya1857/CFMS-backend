@@ -49,4 +49,71 @@ public class Product {
 	@Column(name = "emi_starting")
 	private Long emiStarting;
 	
+	public Long getId() {
+		return id;
+	}
+	
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String[] getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String[] productImage) {
+		this.productImage = productImage;
+	}
+
+	public Long getCost() {
+		return cost;
+	}
+
+	public void setCost(Long cost) {
+		this.cost = cost;
+	}
+
+	public Long getEmiStarting() {
+		return emiStarting;
+	}
+
+	public void setEmiStarting(Long emiStarting) {
+		this.emiStarting = emiStarting;
+	}
+
+	
+	
 }
