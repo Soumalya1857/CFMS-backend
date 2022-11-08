@@ -10,14 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @SuppressWarnings("deprecation")
 @Configuration
-//@EnableWebSecurity
-
 
 public class ApplicationSecurityConfig   {
 	 @Bean
 	    public WebSecurityCustomizer webSecurityCustomizer() {
-	        return (web) -> web.ignoring().antMatchers("/register","/findUsers","/loginUser",
-	        					"/postTransactions","/getTransactions","/getTransactionById",
-	        					"/postProduct","/productById","/allProducts");
+	        return (web) -> web.ignoring().antMatchers("/api/register","/api/findUsers","/api/loginUser",
+	        					"/api/postTransactions","/api/getTransactions","/api/getTransactionById",
+	        					"/api/postProduct","/api/getProduct","/api/getAllProducts");
 	    }
 	}

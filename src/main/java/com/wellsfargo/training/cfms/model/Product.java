@@ -41,7 +41,7 @@ public class Product {
 	private String productName;
 	
 	@Column(name = "product_img")
-	private String[] productImage;
+	private String[] images;
 	
 	@Column(name = "cost")
 	private Long cost;
@@ -90,12 +90,12 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public String[] getProductImage() {
-		return productImage;
+	public String[] getimages() {
+		return images;
 	}
 
-	public void setProductImage(String[] productImage) {
-		this.productImage = productImage;
+	public void setimages(String[] images) {
+		this.images = images;
 	}
 
 	public Long getCost() {
