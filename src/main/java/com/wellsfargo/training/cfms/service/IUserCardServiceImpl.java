@@ -1,5 +1,9 @@
 package com.wellsfargo.training.cfms.service;
 
-public interface IUserCardServiceImpl {
+import java.util.Optional;
 
+import com.wellsfargo.training.cfms.model.Card;
+
+public interface IUserCardServiceImpl {
+	public Optional<Card> getTransaction ( );
 }
