@@ -52,5 +52,4 @@ public class TransactionInfo {
 	@Column(name = "date")
 	private Date date;
 	
-	
 }

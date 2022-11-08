@@ -1,5 +1,7 @@
 package com.wellsfargo.training.cfms.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,5 +41,11 @@ public class UserCard {
 	
 	@Column(name = "is_activated")
 	private boolean isActivated;
+	
+	@Column(name = "issue_date")
+	private Date issueDate;
+	
+	@Column(name = "expiry_date")
+	private Date expiryDate;
 	
 }
