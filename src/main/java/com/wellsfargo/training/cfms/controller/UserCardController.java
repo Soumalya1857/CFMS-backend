@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,8 @@ import com.wellsfargo.training.cfms.service.UserCardService;
 
 @RestController
 @RequestMapping(value="/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 public class UserCardController {
 	
 	@Autowired
@@ -26,7 +28,7 @@ public class UserCardController {
 	@Autowired
 	CardService cardService;
 	
-	@GetMapping("/getCardDetails")
+	@PostMapping("/getCardDetails")
 	public Map<String, Object> getCardDetails(@RequestBody Map<String, Long> body) {
 		UserCard userCard = userCardService.getUserCard(body.get("userId")).get();
 		
@@ -36,7 +38,7 @@ public class UserCardController {
 			put("validity", userCard.getValidity());
 			put("cardType", userCard.getCardType());
 			put("validity", userCard.getValidity());
-			put("Status", "Activated");
+			put("status", "Activated");
 			put("issueDate", userCard.getIssueDate());
 			put("remainingCredit", userCard.getUseableCreditLimit());
 			put("totalCredit", card.getCreditLimit());

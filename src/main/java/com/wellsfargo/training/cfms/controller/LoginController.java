@@ -17,7 +17,7 @@ import com.wellsfargo.training.cfms.service.UserService;
 
 @RestController
 @RequestMapping(value="/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoginController {
 	@Autowired
 	UserService userService;

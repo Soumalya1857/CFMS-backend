@@ -35,7 +35,7 @@ public class UserCardService implements IUserCardServiceImpl {
 		userCard.setActivated( user.isActivated() );
 		userCard.setIssueDate(cal.getTime());
 		cal.add(Calendar.YEAR, 5);
-		userCard.setExpiryDate(cal.getTime());
+		userCard.setValidity(cal.getTime());
 		
 		// userCardRepository.save(userCard);
 		return userCard;

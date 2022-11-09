@@ -26,8 +26,9 @@ import com.wellsfargo.training.cfms.service.UserCardService;
 import com.wellsfargo.training.cfms.service.UserService;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value="/api")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class ProductController {
 	
 	@Autowired
@@ -108,7 +109,7 @@ public class ProductController {
 		}};
 	 }
 	
-	@GetMapping("/getProduct") 
+	@PostMapping("/getProduct") 
 	public Optional<Product> getProductDetails(@RequestBody Map<String,Long> productDetails) {
 		return productService.getProduct(productDetails.get("productId"));
 	}
