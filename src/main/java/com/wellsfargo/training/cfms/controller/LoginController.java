@@ -32,9 +32,13 @@ public class LoginController {
 
 		if(email.equals(user1.getEmail()) && password.equals(user1.getPassword())) {
 			return new HashMap<String, Object>() {{
-					put("fname", user1.getFirstName());
+				
+					put("userId", user1.getId());
+					put("firstName", user1.getFirstName());
+					put("userName", user1.getUserName());
 					put("status", "success");
 					put("message", "user logged in successfully");
+					
 				}};
 			}
 		

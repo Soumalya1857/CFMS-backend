@@ -1,8 +1,10 @@
 package com.wellsfargo.training.cfms.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +39,7 @@ public class RegisterController {
 	TransactionInfoService transactionInfoService;
 	
 	@PostMapping("/register")
-	public User registerUser(@RequestBody User user) {
+	public Map<String, Object> registerUser(@RequestBody User user) {
 		userService.registerUser(user);
 		// restrict user from register multiple times again
 		
@@ -51,7 +53,10 @@ public class RegisterController {
 		TransactionInfo newTransaction = transactionInfoService.transactionBuilderFromCard(genericCard, userCard, user);
 		transactionInfoService.saveTransactionInfo(newTransaction);
 		
-		return user;
+		return new HashMap<String, Object>(){{
+			put("message", "success");
+			put("status", "ok");
+		}};
 	}
 	
 	@GetMapping("/getAllUsers")
