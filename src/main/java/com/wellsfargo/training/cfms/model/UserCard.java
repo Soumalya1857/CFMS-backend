@@ -46,7 +46,7 @@ public class UserCard {
 	
 	@Column(name = "expiry_date")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date expiryDate;
+	private Date validity;
 	
 
 	public Long getId() {
@@ -97,12 +97,12 @@ public class UserCard {
 		this.issueDate = issueDate;
 	}
 
-	public Date getExpiryDate() {
-		return expiryDate;
+	public Date getValidity() {
+		return validity;
 	}
 
-	public void setExpiryDate(Date expiryDate) {
-		this.expiryDate = expiryDate;
+	public void setValidity(Date validity) {
+		this.validity = validity;
 	}
 	
 }

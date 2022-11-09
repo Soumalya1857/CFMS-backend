@@ -35,6 +35,7 @@ public class LoginController {
 				
 					put("userId", user1.getId());
 					put("firstName", user1.getFirstName());
+					put("lastName", user1.getLastName());
 					put("userName", user1.getUserName());
 					put("status", "success");
 					put("message", "user logged in successfully");
