@@ -21,7 +21,7 @@ public class TransactionController {
 	@Autowired(required = true)
 	TransactionInfoService transactionInfoService;
 	
-	@GetMapping("/getTransaction")
+	@GetMapping("/getAllTransactions")
 	public List<TransactionInfo> getAllTransaction(@RequestBody Map<String,Long> userBody){
 		System.out.print(userBody);
 		return transactionInfoService.getAllTransaction(userBody.get("userId"));

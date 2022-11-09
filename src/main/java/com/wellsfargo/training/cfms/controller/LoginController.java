@@ -1,5 +1,8 @@
 package com.wellsfargo.training.cfms.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,19 +21,28 @@ public class LoginController {
 	UserService userService;
 
 	@PostMapping("/login")
-	public User loginDealer(@Validated @RequestBody User user) throws ResourceNotFoundException
+	public Map<String, Object> loginDealer(@Validated @RequestBody User user) throws ResourceNotFoundException
 	{
 		String email=user.getEmail();
 		String password=user.getPassword();
+		user.setActivated(true);
 		User user1 = userService.loginUser(email).orElseThrow(() ->
 		new ResourceNotFoundException("User not found for this user id. "));
 
 
 		if(email.equals(user1.getEmail()) && password.equals(user1.getPassword())) {
-			return user1;
-		}
+			return new HashMap<String, Object>() {{
+					put("fname", user1.getFirstName());
+					put("status", "success");
+					put("message", "user logged in successfully");
+				}};
+			}
+		
 
-		return null;
+		return new HashMap<String, Object>() {{
+			put("status", "error");
+			put("message", "Wrong Password or invalid user");
+		}};
 		
 		
 	}
