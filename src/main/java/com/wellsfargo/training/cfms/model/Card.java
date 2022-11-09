@@ -30,7 +30,7 @@ public class Card {
 	@Column(name = "joining_fee")
 	private Long joiningFee;
 	
-	@Column(name = "creditLimit")
+	@Column(name = "credit_limit")
 	private Long creditLimit;
 	
 	@Column(name = "billing_cycle")

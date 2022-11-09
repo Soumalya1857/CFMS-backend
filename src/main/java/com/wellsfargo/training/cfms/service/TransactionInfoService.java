@@ -36,7 +36,7 @@ public class TransactionInfoService implements ITransactionInfoServiceImpl {
 		return transactionInfoRepository.findByUserId(userId);
 	}
 	
-	public TransactionInfo transactionBuilder(Card genericCard, UserCard userCard, User user ) {
+	public TransactionInfo transactionBuilderFromCard(Card genericCard, UserCard userCard, User user ) {
 		TransactionInfo newTransaction = new TransactionInfo();
 		newTransaction.setAmountPaid(genericCard.getJoiningFee());
 		newTransaction.setProductId(Long.valueOf(0));
@@ -50,4 +50,35 @@ public class TransactionInfoService implements ITransactionInfoServiceImpl {
 		return newTransaction;
 		
 	}
+	
+//	public void transactionBuilder(Card genericCard, Long cost, UserCard currUserCard, Long productId, User currUser, Long numberOfEmis) {
+//		
+//		TransactionInfo newTransaction = new TransactionInfo();
+//		newTransaction.setAmountPaid();
+//		newTransaction.setProductId(Long.valueOf(productId));
+//		newTransaction.setUserCardId(currUserCard.getId());
+//		newTransaction.setOutstanding(false);
+//		newTransaction.setCompleted(true);
+//		newTransaction.setUserId(currUser.getId());
+//		newTransaction.setDate(Calendar.getInstance().getTime());
+//		
+//		transactionInfoRepository.save(newTransaction);
+//		
+//		for(int i = 1; i<numberOfEmis; i++) {
+//			
+//			Calendar cal = Calendar.getInstance(); 
+//			cal.add(Calendar.MONTH, 1);
+//			TransactionInfo newTransaction1 = new TransactionInfo();
+//			newTransaction.setAmountPaid(genericCard.getJoiningFee());
+//			newTransaction.setProductId(Long.valueOf(productId));
+//			newTransaction.setUserCardId(currUserCard.getId());
+//			newTransaction.setOutstanding(true);
+//			newTransaction.setCompleted(false);
+//			newTransaction.setUserId(currUser.getId());
+//			newTransaction.setDate(cal.getTime());
+//			
+//			transactionInfoRepository.save(newTransaction1);
+//			
+//		}
+//	}
 }

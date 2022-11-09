@@ -1,6 +1,7 @@
 package com.wellsfargo.training.cfms.service;
 
 import java.util.Calendar;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -38,6 +39,10 @@ public class UserCardService implements IUserCardServiceImpl {
 		
 		// userCardRepository.save(userCard);
 		return userCard;
+	}
+	
+	public Optional<UserCard> getUserCard (Long userId) {
+		return userCardRepository.findByUserId(userId);
 	}
 	
 	

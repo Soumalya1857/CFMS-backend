@@ -37,21 +37,21 @@ public class RegisterController {
 	TransactionInfoService transactionInfoService;
 	
 	@PostMapping("/register")
-	public void registerUser(@RequestBody User user) {
+	public User registerUser(@RequestBody User user) {
 		userService.registerUser(user);
 		// restrict user from register multiple times again
 		
 		// create a user card based on the user card type
-		Card genericCard = cardService.getCard( user.getCardType()).get();
+		Card genericCard = cardService.getCard( user.getCardType()).get(); // no data
 		// create the userCard
 		UserCard userCard = userCardService.cardBuilder(user, genericCard);
 		userCardService.createNewUserCard(userCard);
 		
 		// create a transaction object details too and save them
-		TransactionInfo newTransaction = transactionInfoService.transactionBuilder(genericCard, userCard, user);
+		TransactionInfo newTransaction = transactionInfoService.transactionBuilderFromCard(genericCard, userCard, user);
 		transactionInfoService.saveTransactionInfo(newTransaction);
 		
-		// product purchase logic => done
+		return user;
 	}
 	
 	@GetMapping("/getAllUsers")
