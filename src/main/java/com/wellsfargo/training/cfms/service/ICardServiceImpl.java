@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.wellsfargo.training.cfms.model.Card;
 
-public interface IUserCardServiceImpl {
+public interface ICardServiceImpl {
 	
+	public Optional<Card> getCard(String cardType);
 }

@@ -1,6 +1,6 @@
 package com.wellsfargo.training.cfms.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +13,7 @@ import javax.persistence.UniqueConstraint;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
@@ -32,10 +30,10 @@ public class TransactionInfo {
 	private Long transactionId;
 	
 	@Column(name = "amount_paid")
-	private Long amountPaid; // foreign to user
+	private Long amountPaid; 
 	
 	@Column(name = "product_id")
-	private Long productId; // foreign to Card
+	private Long productId; 
 	
 	@Column(name = "user_card_id")
 	private Long userCardId;

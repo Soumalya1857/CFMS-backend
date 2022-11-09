@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wellsfargo.training.cfms.model.TransactionInfo;
@@ -15,25 +16,21 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@RequestMapping(value="/api")
 public class TransactionController {
 	@Autowired(required = true)
 	TransactionInfoService transactionInfoService;
 	
-	@PostMapping("/postTransactions")
-	public void postTransact(@RequestBody TransactionInfo transactionInfo) {
-		transactionInfoService.postTransact(transactionInfo);
-	}
-	
 	@GetMapping("/getTransactions")
-	public List<TransactionInfo> getAllTransaction(@RequestBody Map<String,Long> userId){
-		System.out.print(userId);
-		return transactionInfoService.getAllTransaction(userId.get("userId"));
+	public List<TransactionInfo> getAllTransaction(@RequestBody Map<String,Long> userBody){
+		System.out.print(userBody);
+		return transactionInfoService.getAllTransaction(userBody.get("userId"));
 	}
 	
 	@GetMapping("/getTransactionById")
-	public Optional<TransactionInfo> getTransaction (@RequestBody Map<String,Long> transactionId) {
-		System.out.print(transactionId);
-		return transactionInfoService.getTransaction(transactionId.get("transactionId"));
+	public Optional<TransactionInfo> getTransaction (@RequestBody Map<String,Long> transactionBody) {
+		System.out.print(transactionBody);
+		return transactionInfoService.getTransaction(transactionBody.get("transactionId"));
 		
 	}
 }

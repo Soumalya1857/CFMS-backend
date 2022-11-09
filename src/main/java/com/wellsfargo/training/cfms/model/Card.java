@@ -22,19 +22,26 @@ import lombok.ToString;
 @ToString
 
 public class Card {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "price")
-	private Long price;
+	@Column(name = "joining_fee")
+	private Long joiningFee;
+	
+	@Column(name = "creditLimit")
+	private Long creditLimit;
+	
+	@Column(name = "billing_cycle")
+	private Long billingCycle;
+	
+	@Column(name = "card_type")
+	private String cardType;
 	
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "product_name")
-	private String productName;
-
 	public Long getId() {
 		return id;
 	}
@@ -43,12 +50,36 @@ public class Card {
 		this.id = id;
 	}
 
-	public Long getPrice() {
-		return price;
+	public Long getJoiningFee() {
+		return joiningFee;
 	}
 
-	public void setPrice(Long price) {
-		this.price = price;
+	public void setJoiningFee(Long joiningFee) {
+		this.joiningFee = joiningFee;
+	}
+
+	public Long getCreditLimit() {
+		return creditLimit;
+	}
+
+	public void setCreditLimit(Long creditLimit) {
+		this.creditLimit = creditLimit;
+	}
+
+	public Long getBillingCycle() {
+		return billingCycle;
+	}
+
+	public void setBillingCycle(Long billingCycle) {
+		this.billingCycle = billingCycle;
+	}
+
+	public String getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
 	}
 
 	public String getDescription() {
@@ -59,12 +90,6 @@ public class Card {
 		this.description = description;
 	}
 
-	public String getProductName() {
-		return productName;
-	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	
+
 }
