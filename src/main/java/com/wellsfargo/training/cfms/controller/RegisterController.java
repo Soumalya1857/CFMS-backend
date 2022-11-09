@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ import com.wellsfargo.training.cfms.service.UserService;
 
 @RestController
 @RequestMapping(value="/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RegisterController {
 	
 	@Autowired
@@ -41,7 +43,6 @@ public class RegisterController {
 	@PostMapping("/register")
 	public Map<String, Object> registerUser(@RequestBody User user) {
 		userService.registerUser(user);
-		// restrict user from register multiple times again
 		
 		// create a user card based on the user card type
 		Card genericCard = cardService.getCard( user.getCardType()).get(); // no data
