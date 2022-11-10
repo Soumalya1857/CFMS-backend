@@ -88,19 +88,19 @@ public class ProductController {
 		TransactionInfo newTransaction1 = new TransactionInfo();
 		Calendar cal = Calendar.getInstance(); 
 		
-		for(int i = 1; i<numberOfEmis; i++) {
-			cal.add(Calendar.MONTH, 1);
-			newTransaction1.setAmountPaid( purchasableProduct.getCost() / numberOfEmis );
-			newTransaction1.setProductId(Long.valueOf(productId));
-			newTransaction1.setUserCardId(currUserCard.getId());
-			newTransaction1.setOutstanding(true);
-			newTransaction1.setCompleted(false);
-			newTransaction1.setUserId(currUser.getId());
-			newTransaction1.setDate(cal.getTime());
-			
-			transactionInfoService.saveTransactionInfo(newTransaction1);
-			
-		}
+//		for(int i = 1; i<numberOfEmis; i++) {
+//			cal.add(Calendar.MONTH, 1);
+//			newTransaction1.setAmountPaid( purchasableProduct.getCost() / numberOfEmis );
+//			newTransaction1.setProductId(Long.valueOf(productId));
+//			newTransaction1.setUserCardId(currUserCard.getId());
+//			newTransaction1.setOutstanding(true);
+//			newTransaction1.setCompleted(false);
+//			newTransaction1.setUserId(currUser.getId());
+//			newTransaction1.setDate(cal.getTime());
+//			
+//			transactionInfoService.saveTransactionInfo(newTransaction1);
+//			
+//		}
 		
 		
 		return new HashMap<String, Object>() {{
