@@ -53,8 +53,7 @@ public class ProductController {
 		Long userId = details.get("userId");
 		Long numberOfEmis = details.get("numberOfEmis");
 		
-		
-
+	
 		
 		Product purchasableProduct = productService.getProduct(productId).get();
 		UserCard currUserCard = userCardService.getUserCard(userId).get();
